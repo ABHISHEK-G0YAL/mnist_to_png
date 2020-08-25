@@ -1,0 +1,17 @@
+        uchar*** dataset = new uchar**[n_images];
+        for(int i = 0; i < n_images; i++) {
+            dataset[i] = new uchar*[n_rows];
+            for(int j = 0; j < n_rows; j++) {
+                dataset[i][j] = new uchar[n_cols];
+                // use this to read binary file.
+                file.read((char*)dataset[i][j], n_cols);
+                cout << file.tellg() << endl;
+                // // this discards the whitespaces in the data, hence morphs all the digits not sutable to be used with binary data
+                // for(int k = 0; k < n_cols; k++) {
+                //     file >> dataset[i][j][k];
+                //     cout << file.tellg() << endl;
+                // }
+                // cout << endl;
+            }
+            sleep(3);
+        }
